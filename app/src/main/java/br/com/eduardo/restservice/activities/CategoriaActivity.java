@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import br.com.eduardo.restservice.R;
 import br.com.eduardo.restservice.adapters.ProdutoRecycleViewAdapter;
-import br.com.eduardo.restservice.httprequests.HttpServices;
+import br.com.eduardo.restservice.httprequests.HttpRequests;
 import br.com.eduardo.restservice.httprequests.ServiceGenerator;
 import br.com.eduardo.restservice.util.Util;
 import br.com.eduardo.restservice.vo.CategoriaVO;
@@ -80,7 +80,7 @@ public class CategoriaActivity extends AppCompatActivity {
     private void recuperarCategoria(CategoriaVO categoria) {
         Util.exibirProgressDialog(CategoriaActivity.this, "Aguarde...");
 
-        HttpServices services = ServiceGenerator.creativeService(HttpServices.class);
+        HttpRequests services = ServiceGenerator.creativeService(HttpRequests.class);
         Call<ResultRequest<CategoriaVO>> call = services.recuperarCategoria(categoria);
 
         call.enqueue(new Callback<ResultRequest<CategoriaVO>>() {

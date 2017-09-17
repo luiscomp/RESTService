@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 /**
  * Created by LuisEduardo on 24/04/2017.
  */
-public interface HttpServices {
+public interface HttpRequests {
 
     @POST("Usuario/Cadastrar")
     @Headers({ "Content-Type: application/json;charset=UTF-8", "Accept: application/json"})

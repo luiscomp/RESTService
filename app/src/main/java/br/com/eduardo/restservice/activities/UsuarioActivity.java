@@ -7,7 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.eduardo.restservice.R;
-import br.com.eduardo.restservice.httprequests.HttpServices;
+import br.com.eduardo.restservice.httprequests.HttpRequests;
 import br.com.eduardo.restservice.httprequests.ServiceGenerator;
 import br.com.eduardo.restservice.util.Util;
 import br.com.eduardo.restservice.httprequests.ResultRequest;
@@ -50,7 +50,7 @@ public class UsuarioActivity extends AppCompatActivity {
     private void cadastrarUsuario(UsuarioVO usuario) {
         Util.exibirProgressDialog(UsuarioActivity.this, "Aguarde...");
 
-        HttpServices services = ServiceGenerator.creativeService(HttpServices.class);
+        HttpRequests services = ServiceGenerator.creativeService(HttpRequests.class);
         Call<ResultRequest<UsuarioVO>> call = services.cadastrarUsuario(usuario);
 
         call.enqueue(new Callback<ResultRequest<UsuarioVO>>() {

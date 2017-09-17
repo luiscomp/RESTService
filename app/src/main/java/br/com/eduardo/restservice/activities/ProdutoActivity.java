@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import br.com.eduardo.restservice.R;
 import br.com.eduardo.restservice.adapters.ProdutoRecycleViewAdapter;
-import br.com.eduardo.restservice.httprequests.HttpServices;
+import br.com.eduardo.restservice.httprequests.HttpRequests;
 import br.com.eduardo.restservice.httprequests.ServiceGenerator;
 import br.com.eduardo.restservice.util.Util;
 import br.com.eduardo.restservice.vo.ProdutoVO;
@@ -50,7 +50,7 @@ public class ProdutoActivity extends AppCompatActivity {
     private void recuperarListaProdutos() {
         Util.exibirProgressDialog(ProdutoActivity.this, "Aguarde...");
 
-        HttpServices services = ServiceGenerator.creativeService(HttpServices.class);
+        HttpRequests services = ServiceGenerator.creativeService(HttpRequests.class);
         Call<ResultRequest<ProdutoVO>> call = services.recuperarListaProdutos();
 
         call.enqueue(new Callback<ResultRequest<ProdutoVO>>() {
