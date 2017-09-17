@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by LuisEduardo on 24/04/2017.
  */
 public class ServiceGenerator {
-    protected static final String IP = "192.168.43.216";//"10.10.1.121";//"192.168.221.108";
+    protected static final String IP = "10.2.10.228";//"10.10.1.121";//"192.168.221.108";
     protected static final String PORT = "8080";
     protected static final String CONTEXT = "RESTService";
     protected static final String URL_SERVIDOR= "http://"+IP+":"+PORT+"/"+CONTEXT+"/";

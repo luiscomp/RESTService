@@ -25,4 +25,8 @@ public interface HttpServices {
     @POST("Produto/Listar")
     @Headers({ "Content-Type: application/json;charset=UTF-8", "Accept: application/json"})
     Call<ResultRequest<ProdutoVO>> recuperarListaProdutos(@Body ProdutoVO produto);
+
+    @GET("Produto/Listar")
+    @Headers("Accept: application/json")
+    Call<ResultRequest<ProdutoVO>> recuperarListaProdutos();
 }

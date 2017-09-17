@@ -27,7 +27,7 @@ public class ProdutoActivity extends AppCompatActivity {
     @BindView(R.id.rvProdutos) RecyclerView rvProdutos;
 
     @OnClick(R.id.btnBuscar) void buscar() {
-        recuperarListaProdutos(new ProdutoVO());
+        recuperarListaProdutos();
     }
 
     @Override
@@ -47,11 +47,11 @@ public class ProdutoActivity extends AppCompatActivity {
     }
 
 
-    private void recuperarListaProdutos(ProdutoVO produto) {
+    private void recuperarListaProdutos() {
         Util.exibirProgressDialog(ProdutoActivity.this, "Aguarde...");
 
         HttpServices services = ServiceGenerator.creativeService(HttpServices.class);
-        Call<ResultRequest<ProdutoVO>> call = services.recuperarListaProdutos(produto);
+        Call<ResultRequest<ProdutoVO>> call = services.recuperarListaProdutos();
 
         call.enqueue(new Callback<ResultRequest<ProdutoVO>>() {
             @Override
